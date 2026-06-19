@@ -316,23 +316,26 @@ async function initNavbar() {
     const isMinecraftDir = normalizedPath.includes('/pages/minecraft/');
     const isPagesDir = normalizedPath.includes('/pages/');
 
-    let pbase, ibase, imgbase, basePath;
+    let pbase, ibase, imgbase, basePath, homeLink;
 
     if (isMinecraftDir) {
         pbase = '../';
         ibase = '../../';
         imgbase = '../../';
         basePath = '../../';
+        homeLink = '../../index.html';
     } else if (isPagesDir) {
         pbase = '';
         ibase = '../';
         imgbase = '../';
         basePath = '../';
+        homeLink = '../index.html';
     } else {
         pbase = 'pages/';
         ibase = '';
         imgbase = '';
         basePath = './';
+        homeLink = 'index.html';
     }
 
     // Prefer info_data.js (loaded as a script tag) — fast, no fetch needed.
@@ -384,7 +387,7 @@ async function initNavbar() {
         <div class="nav-container">
             <div class="logo-group">
                 <div class="logo-container">
-                    <a href="${pbase}home.html" class="logo-link">
+                    <a href="${homeLink}" class="logo-link">
                         <img src="${imgbase}images/logo.png" alt="Moshko's Core Logo" class="logo">
                         <span class="logo-dropdown-indicator">&#9660;</span>
                     </a>
@@ -400,7 +403,7 @@ async function initNavbar() {
             </div>
 
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="${pbase}home.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="${homeLink}" class="nav-link" data-i18n="nav.home">Home</a></li>
                 <li><a href="${pbase}updates.html" class="nav-link" data-i18n="nav.updates">Updates</a></li>
                 <li><a href="${pbase}bar.html" class="nav-link" data-i18n="nav.bar">Bar Menu</a></li>
                 <li><a href="${pbase}minecraft.html" class="nav-link" data-i18n="nav.minecraft">Minecraft</a></li>
@@ -460,7 +463,7 @@ function setActiveLink() {
     // Map subpages to their main navbar category
     let targetPage = page;
     if (page === "" || page === "index.html") {
-        targetPage = "home.html";
+        targetPage = "index.html";
     } else if (page === "resource-pack.html" || page === "builds.html") {
         targetPage = "minecraft.html";
     }

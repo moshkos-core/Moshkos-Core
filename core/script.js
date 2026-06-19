@@ -629,8 +629,10 @@ async function loadSiteContent() {
 
             if (title) title.textContent = window.siteConfig.hero.title;
             if (subtitle) subtitle.textContent = window.siteConfig.hero.subtitle;
-            if (btns[0] && window.siteConfig.hero.btnPlay) btns[0].textContent = window.siteConfig.hero.btnPlay;
-            if (btns[1] && window.siteConfig.hero.btnExplore) btns[1].textContent = window.siteConfig.hero.btnExplore;
+            // Only set button text if the button does NOT have a data-i18n attribute
+            // (lang.js handles i18n buttons correctly; overwriting them here swaps labels)
+            if (btns[0] && window.siteConfig.hero.btnPlay && !btns[0].hasAttribute('data-i18n')) btns[0].textContent = window.siteConfig.hero.btnPlay;
+            if (btns[1] && window.siteConfig.hero.btnExplore && !btns[1].hasAttribute('data-i18n')) btns[1].textContent = window.siteConfig.hero.btnExplore;
         }
 
         // 4. Apply About Section
