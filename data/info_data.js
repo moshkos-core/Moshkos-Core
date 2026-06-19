@@ -41,13 +41,6 @@ window.INFO_DATA = {
             cssClass: "email-general"
         },
         {
-            label: "moshko@parlagames.co.il",
-            type: "email",
-            address: "moshko@parlagames.co.il",
-            icon: "images/icons/gmail.svg",
-            cssClass: "email-events"
-        },
-        {
             label: "NameMC",
             label_he: "ניים אם סי",
             type: "link",

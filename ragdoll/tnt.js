@@ -132,6 +132,9 @@ class Grenade {
             // Free flight
             this.airTime += dt;
 
+            // Keep body awake — prevents physics engine from freezing it
+            b.wakeUp();
+
             // Out-of-bounds guard
             if (!isFinite(b.position.x) || !isFinite(b.position.y) ||
                 Math.abs(b.position.x) > 80 || b.position.y > 80) {
@@ -139,11 +142,25 @@ class Grenade {
                 b.velocity.set(0, 0, 0);
             }
 
+            // Stuck detection: if velocity is near zero mid-air for too long, kick it down
+            const speed = Math.sqrt(b.velocity.x * b.velocity.x + b.velocity.y * b.velocity.y);
+            if (this.airTime > 1.5 && speed < 0.5 &&
+                b.position.y - this.HALF > tntBounds.bottom + 1.5) {
+                b.velocity.set(0, -8, 0);
+                b.wakeUp();
+            }
+
+            // Max lifetime: auto-explode after 15 seconds of free flight
+            if (this.airTime > 15) {
+                this.explode();
+                return;
+            }
+
             // Land on floor â†’ start countdown
-            // Requires 0.5 s of free flight to prevent triggering mid-throw
-            if (this.airTime > 0.5 &&
-                b.velocity.y <= 1.0 &&
-                b.position.y - this.HALF <= tntBounds.bottom + 0.5) {
+            // Requires 0.3 s of free flight to prevent triggering mid-throw
+            if (this.airTime > 0.3 &&
+                b.velocity.y <= 1.5 &&
+                b.position.y - this.HALF <= tntBounds.bottom + 0.8) {
                 this.countingDown   = true;
                 this.countdownTimer = 0;
                 this._cdX           = b.position.x;

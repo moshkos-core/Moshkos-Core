@@ -3,7 +3,7 @@
         "title": "Moshko's Core - Home",
         "description": "Moshko's Core - Epic Games & Minecraft Adventures",
         "copyright": "© Moshko's Core - All rights reserved.",
-        "footerCredits": "Created By Moshko"
+        "footerCredits": "Created By Shahar.M"
     },
     "navigation": {
         "home": "Home",
@@ -36,13 +36,6 @@
                 "cssClass": "email-general"
             },
             {
-                "label": "moshko@parlagames.co.il",
-                "type": "email",
-                "address": "moshko@parlagames.co.il",
-                "icon": "images/icons/gmail.svg",
-                "cssClass": "email-events"
-            },
-            {
                 "label": "NameMC",
                 "type": "link",
                 "url": "https://namemc.com/profile/MoshkoThoughts_",
@@ -68,15 +61,14 @@
     "hero": {
         "title": "Welcome to Moshko's Core",
         "subtitle": "Moshko's Core - A place where ideas come to life!",
-        "btnPlay": "Play Games",
-        "btnExplore": "Explore Minecraft"
+        "btnPlay": "Explore Minecraft",
+        "btnExplore": "Visit the Bar"
     },
     "about": {
         "title": "About me",
         "bio": [
             "בישול ושהייה בים הם הדרכים האהובות עליי להירגע ולהטעין מצברים. התחביבים האלו מעניקים לי את המרחב האישי שבו אני יכול להתמקד בעצמי ולחבר בין שלווה ליצירתיות.",
-            "אני משחק במיינקראפט כבר 12 שנים, וב-4 השנים האחרונות צברתי ניסיון בתפקידי צוות שונים בקהילת הפרלמנטום. כיום אני סגן אחראי בשרת הדיסקורד של הקהילה, אחראי על תכנון אירועים וניהול שוטף.",
-            "בנוסף, אני מתמחה בבנייה וניהול שרתי דיסקורד מקצועיים, כולל עיצוב והתאמה אישית. אני משלב יצירתיות וניהול כדי להביא ערך לקהילות שאני חלק מהן."
+            "אני ני משחק במיינקראפט כבר 12 שנים, אני מתמחה בבנייה וניהול שרתי דיסקורד מקצועיים, כולל עיצוב והתאמה אישית. אני משלב יצירתיות וניהול כדי להביא ערך לקהילות שאני חלק מהן."
         ]
     },
     "quickLinks": {

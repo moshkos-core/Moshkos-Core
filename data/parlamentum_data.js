@@ -58,5 +58,6 @@ const PARLAMENTUM_TIMELINE = [
     { date: "17/07/2025", title: "עלייה למפקח בכיר בדיסקורד", icon: "👑", role: "role-discord-admin" },
     { date: "26/09/2025", title: " חזרה לצוות קינפוג", icon: "⚙️", role: "role-config" },
     { date: "16/11/2025", title: "סגן אחראי דיסקורד", icon: "🎖️", role: "role-vice-discord" },
+    { date: "07/06/2026", title: "פרישה מהצוות", icon: "👋", role: "role-leave" },
 
 ];

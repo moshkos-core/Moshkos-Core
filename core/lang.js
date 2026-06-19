@@ -24,6 +24,7 @@ window.MoshkoLang = {
             'nav.timeline': 'Timeline',
             'nav.minecraft': 'Minecraft',
             'nav.games': 'Games',
+            'nav.bar': 'Bar Menu',
 
             // ── Month names ──────────────────────────────────────────
             'month.january': 'January',
@@ -42,19 +43,19 @@ window.MoshkoLang = {
             // ── Home page ────────────────────────────────────────────
             'home.title': "Welcome to Moshko's Core!",
             'home.subtitle': "Moshko's Core - A place where ideas come to life!",
+            'home.btn.bar': 'Visit the Bar',
             'home.btn.minecraft': 'Explore Minecraft',
             'home.btn.games': 'Play Games',
             'home.about.title': 'About Me',
             'home.about.p1': 'Cooking and chilling at the beach are my favorite ways to relax and recharge. These hobbies grant me the personal space where I can focus on myself and bridge tranquility with creativity.',
-            'home.about.p2': "I have been playing Minecraft for 12 years, and for the past 4 years, I have gained experience in various staff roles within the Parlamentum community. Currently, I am the Deputy Manager of the community's Discord server, responsible for event planning and day-to-day management.",
-            'home.about.p3': 'In addition, I specialize in building and managing professional Discord servers, including design and customization. I combine creativity and management to bring value to the communities I am a part of.',
+            'home.about.p2': 'I have been playing Minecraft for 12 years, I specialize in building and managing professional Discord servers, including design and customization. I combine creativity and management to bring value to the communities I am a part of.',
 
             // ── Updates page ─────────────────────────────────────────
             'updates.title': 'Latest Updates',
             'updates.subtitle': "Stay current with what's new in Moshko's Core!",
 
             // ── Timeline page ────────────────────────────────────────
-            'timeline.title': 'My Timeline',
+            'timeline.title': 'Parlamentum Staff Timeline',
             'timeline.subtitle': 'My Path Through the Parlamentum Staff!',
             'timeline.stat.roles': 'Role Count',
             'timeline.stat.tenure': 'Service Tenure',
@@ -69,6 +70,10 @@ window.MoshkoLang = {
             'minecraft.card.builds.title': 'My Builds',
             'minecraft.card.builds.desc': 'Explore my showcase of incredible Minecraft builds!',
             'minecraft.card.builds.btn': 'View Gallery',
+            'minecraft.card.timeline.title': 'Parlamentum Timeline',
+            'minecraft.card.timeline.desc': 'My timeline in the Parlamentum staff!',
+            'minecraft.card.timeline.btn': 'View Timeline',
+            'timeline.back': 'Back to Minecraft Page',
             'minecraft.features.heading': 'What Makes Our Pack Special?',
             'minecraft.feat.doors.title': '🚪 Enhanced Doors',
             'minecraft.feat.doors.desc': 'Custom 3D models for all doors and trapdoors, adding depth and detail to every wood type.',
@@ -123,13 +128,25 @@ window.MoshkoLang = {
             'game.breath.desc': 'Defend the brewery with cosmic fire!',
 
             // ── Footer ───────────────────────────────────────────────
-            'footer.credit': "🍔 Created By Moshko's Core 🍺",
+            'footer.credit': "🍔 Created By Shahar.M 🍺",
 
             // ── Skin panel ───────────────────────────────────────────
             'skin.placeholder': 'Username',
             'skin.btn.change': 'Change Skin',
             'skin.btn.reset': 'Reset',
             'skin.btn.grenade': 'Drag & Throw Grenade (G)',
+
+            // ── Bar page ─────────────────────────────────────────────
+            'bar.title': "🍸 Moshko's Bar",
+            'bar.category.whiskey': 'Whiskey',
+            'bar.category.vodka': 'Vodka',
+            'bar.category.ginrum': 'Gin & Rum',
+            'bar.category.tequila': 'Tequila',
+            'bar.category.brandy': 'Brandy',
+            'bar.category.wine': 'Wine',
+            'bar.category.spiritsaperitifsfortified': 'Spirits / Aperitifs & Fortified',
+            'bar.category.liqueurs': 'Liqueurs',
+            'bar.category.anise': 'Anise',
         },
 
         he: {
@@ -139,6 +156,7 @@ window.MoshkoLang = {
             'nav.timeline': 'ציר זמן',
             'nav.minecraft': 'מיינקראפט',
             'nav.games': 'משחקים',
+            'nav.bar': 'תפריט הבר',
 
             // ── Month names (Hebrew) ──────────────────────────────────
             'month.january': 'ינואר',
@@ -157,19 +175,19 @@ window.MoshkoLang = {
             // ── Home page ────────────────────────────────────────────
             'home.title': "ברוכים הבאים ל-Moshko's Core!",
             'home.subtitle': "Moshko's Core - מקום שבו רעיונות הופכים למציאות!",
+            'home.btn.bar': 'בקר בבר',
             'home.btn.minecraft': 'גלה את המיינקראפט',
             'home.btn.games': 'שחק משחקים',
             'home.about.title': 'קצת עליי',
             'home.about.p1': 'בישול ושהייה בים הם הדרכים האהובות עליי להירגע ולהטעין מצברים. התחביבים האלו מעניקים לי את המרחב האישי שבו אני יכול להתמקד בעצמי ולחבר בין שלווה ליצירתיות.',
-            'home.about.p2': 'אני משחק במיינקראפט כבר 12 שנים, וב-4 השנים האחרונות צברתי ניסיון בתפקידי צוות שונים בקהילת הפרלמנטום. כיום אני סגן אחראי בשרת הדיסקורד של הקהילה, אחראי על תכנון אירועים וניהול שוטף.',
-            'home.about.p3': 'בנוסף, אני מתמחה בבנייה וניהול שרתי דיסקורד מקצועיים, כולל עיצוב והתאמה אישית. אני משלב יצירתיות וניהול כדי להביא ערך לקהילות שאני חלק מהן. כולל עיצוב והתאמה אישית. אני משלב יצירתיות וניהול כדי להביא ערך לקהילות שאני חלק מהן.',
+            'home.about.p2': 'אני משחק במיינקראפט כבר 12 שנים, אני מתמחה בבנייה וניהול שרתי דיסקורד מקצועיים, כולל עיצוב והתאמה אישית. אני משלב יצירתיות וניהול כדי להביא ערך לקהילות שאני חלק מהן.',
 
             // ── Updates page ─────────────────────────────────────────
             'updates.title': 'עדכונים אחרונים',
             'updates.subtitle': 'הישאר מעודכן עם מה שחדש!',
 
             // ── Timeline page ────────────────────────────────────────
-            'timeline.title': 'ציר הזמן שלי',
+            'timeline.title': 'ציר הזמן של צוות פרלמנטום',
             'timeline.subtitle': '!המסלול שלי בצוות הפרלמנטום',
             'timeline.stat.roles': 'מספר תפקידים',
             'timeline.stat.tenure': 'זמן בצוות',
@@ -184,6 +202,10 @@ window.MoshkoLang = {
             'minecraft.card.builds.title': 'הבניות שלי',
             'minecraft.card.builds.desc': 'גלה את הויטרינה של בניות מיינקראפט המדהימות שלי!',
             'minecraft.card.builds.btn': 'צפה בגלריה',
+            'minecraft.card.timeline.title': 'ציר זמן פרלמנטום',
+            'minecraft.card.timeline.desc': 'ציר הזמן שלי בצוות הפרלמנטום!',
+            'minecraft.card.timeline.btn': 'צפה בציר הזמן',
+            'timeline.back': 'חזרה לדף מיינקראפט',
             'minecraft.features.heading': '?מה הופך את החבילה שלנו למיוחדת',
             'minecraft.feat.doors.title': 'דלתות משופרות 🚪',
             'minecraft.feat.doors.desc': 'מודלים תלת-ממדיים מותאמים לכל הדלתות ודלתות המלכודת, עם עומק ופרטים לכל סוג עץ.',
@@ -241,13 +263,25 @@ window.MoshkoLang = {
             'contact.title': '🔗 פרטי התקשרות',
 
             // ── Footer ───────────────────────────────────────────────
-            'footer.credit': "🍔 נוצר על ידי Moshko's Core 🍺",
+            'footer.credit': "🍔 נוצר על ידי שחר.מ 🍺",
 
             // ── Skin panel ───────────────────────────────────────────
             'skin.placeholder': 'שם משתמש',
             'skin.btn.change': 'שינוי סקין',
             'skin.btn.reset': 'איפוס',
             'skin.btn.grenade': '(G) גרור וזרוק רימון',
+
+            // ── Bar page ─────────────────────────────────────────────
+            'bar.title': '🍸 הבר של מושקו',
+            'bar.category.whiskey': 'וויסקי',
+            'bar.category.vodka': 'וודקה',
+            'bar.category.ginrum': 'ג׳ין ורום',
+            'bar.category.tequila': 'טקילה',
+            'bar.category.brandy': 'ברנדי',
+            'bar.category.wine': 'יין',
+            'bar.category.spiritsaperitifsfortified': 'משקאות חריפים / אפריטיפים ומחוזקים',
+            'bar.category.liqueurs': 'ליקרים',
+            'bar.category.anise': 'אניס',
         }
     },
 
@@ -272,8 +306,12 @@ window.MoshkoLang = {
         const isHe = this.current === 'he';
 
         // Set lang + dir on <html> for page content
-        document.documentElement.setAttribute('lang', this.current);
-        document.documentElement.setAttribute('dir', isHe ? 'rtl' : 'ltr');
+        // Skip on bar page — keep English fonts and LTR layout
+        const isBarPage = window.location.pathname.endsWith('bar.html');
+        if (!isBarPage) {
+            document.documentElement.setAttribute('lang', this.current);
+            document.documentElement.setAttribute('dir', isHe ? 'rtl' : 'ltr');
+        }
 
         // Navbar ALWAYS stays LTR (left-to-right layout, same side)
         const navbar = document.getElementById('navbar');

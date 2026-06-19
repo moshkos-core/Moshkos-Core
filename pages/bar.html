@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moshko's Bar - My personal bar menu with all the finest drinks in my collection.">
+    <title>My Bar - Moshko's Core</title>
+    <link rel="stylesheet" href="../design/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ── Bar Page Styles ─────────────────────────────── */
+
+        .bar-category {
+            margin-bottom: 3.5rem;
+        }
+
+        /* Centered category header */
+        .bar-category-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .bar-cat-icon {
+            font-size: 2rem;
+        }
+
+        .bar-cat-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            margin: 0;
+            letter-spacing: 0.04em;
+        }
+
+        [data-theme="light"] .bar-category-header {
+            border-color: rgba(124, 62, 237, 0.12);
+        }
+
+        /* Grid */
+        .bar-drinks-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.75rem;
+        }
+
+        /* Drink card */
+        .drink-card {
+            flex: 0 1 200px;
+            min-width: 160px;
+            max-width: 200px;
+            padding: 0 !important;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 16px;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+
+        .drink-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.22);
+            border-color: var(--color-border-hover);
+        }
+
+        /* Photo area */
+        .drink-photo-area {
+            width: 100%;
+            aspect-ratio: 1 / 1.15;
+            background: rgba(139, 92, 246, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .drink-photo-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+            display: none;
+        }
+
+        .drink-photo-area img.has-photo {
+            display: block;
+        }
+
+        /* Info block */
+        .drink-info {
+            padding: 0.85rem 0.75rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.45rem;
+            flex: 1;
+        }
+
+        .drink-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--color-primary-light);
+            letter-spacing: 0.03em;
+            line-height: 1.45;
+            text-align: center;
+        }
+
+        /* ABV badge */
+        .drink-alc {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--color-primary-light);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            letter-spacing: 0.05em;
+        }
+
+        [data-theme="light"] .drink-alc {
+            background: rgba(124, 62, 237, 0.08);
+            border-color: rgba(124, 62, 237, 0.2);
+            color: var(--color-primary);
+        }
+
+        [data-theme="light"] .drink-photo-area {
+            background: rgba(124, 62, 237, 0.04);
+            border-color: rgba(124, 62, 237, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            .drink-card {
+                flex: 0 1 155px;
+                min-width: 140px;
+            }
+
+            .bar-drinks-grid {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="space-background"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <script src="../ragdoll/ragdoll_physics.js"></script>
+    <script src="../ragdoll/ragdoll_background.js"></script>
+    <script src="../ragdoll/tnt.js"></script>
+
+    <nav class="navbar" id="navbar"></nav>
+
+    <div id="content-root">
+        <main id="main-content" dir="ltr">
+
+            <section class="page-header">
+                <div class="container">
+                    <h1 class="page-title" data-aos="fade-up" data-i18n="bar.title">🍸 Moshko's Bar</h1>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container" id="barMenuContainer"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="footer"></footer>
+
+    <div id="ragdoll-container"></div>
+    <div class="skin-control-panel">
+        <input type="text" id="skin-username" placeholder="Minecraft Username" data-i18n="skin.placeholder" value="">
+        <button onclick="window.changeSkin(document.getElementById('skin-username').value)"
+            data-i18n="skin.btn.change">Change Skin</button>
+        <button onclick="window.resetRagdoll()" style="background:#e74c3c;" data-i18n="skin.btn.reset">Reset</button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../data/info_data.js"></script>
+    <script src="../core/lang.js"></script>
+    <script src="../core/shared.js"></script>
+    <script src="../core/script.js"></script>
+    <script src="../core/sounds.js?v=20"></script>
+
+    <script>
+        // ── Bar Data ─────────────────────────────────────────────────────
+        // Each entry: [Display Name, ABV%, image filename in images/drinks/ (or null)]
+        const BAR_DATA = [
+            {
+                category: 'Whiskey', icon: '🥃', drinks: [
+                    ['Four Roses Small Batch Bourbon', '45%', 'Four Roses Small Batch Bourbon.jpg'],
+                    ['Grants Blended Scotch', '40%', 'Grants Blended Scotch.jpg'],
+                    ['DEANSTON Highland Single Malt Scotch', '46.3%', 'DEANSTON Highland Single Malt Scotch.jpg'],
+                    ['Shinobu Blended, Mizunari Wood', '43%', 'Shinobu Blended, Mizunari Wood.jpg'],
+                    ['M&H APEX Single Malt Pineau Des Charentes Cask', '59.8%', 'M&H APEX Single Malt Pineau Des Charentes Cask.jpg'],
+                    ['Johnnie Walker Black Label Blended Scotch', '40%', 'Johnny Walker Black Label Blended Scotch.jpg'],
+                    ['OBAN 14 Single Malt Scotch', '43%', 'OBAN 14 Single Malt Scotch.jpg'],
+                    ['Glenfiddich 15 Single Malt Scotch', '40%', 'Glenfiddich    Single Malt Scotch.jpg'],
+                    ['Bushmills Original Irish', '40%', 'Bushmills Original Irish.jpg'],
+                    ['Jim Beam Bourbon', '40%', 'Jim Beam Bourbon.jpg'],
+                    ['M&H ELEMENTS Single Malt Sherry Cask', '46%', 'M&H ELEMENTS Single Malt Sherry Cask.jpg'],
+                ]
+            },
+            {
+                category: 'Vodka', icon: '🍸', drinks: [
+                    ['Roberto Cavalli Pineapple', '30%', 'Roberto Cavalli Pineapple.jpg'],
+                    ['Grey Goose', '40%', 'Grey Goose.jpg'],
+                    ['Van Gogh Melon', '35%', 'Van Gogh Melon.jpg'],
+                ]
+            },
+            {
+                category: 'Gin & Rum', icon: '🌿', drinks: [
+                    ['Dry Gin', '40%', 'Dry Gin.jpg'],
+                    ['Bacardi White', '40%', 'Bacardi White.jpg'],
+                    ['Spuced Gold', '35%', 'Captain Morgan Spiced Gold.jpg'],
+                ]
+            },
+            {
+                category: 'Tequila', icon: '🌵', drinks: [
+                    ['Sierra', '38%', 'Sierra.jpg'],
+                    ['Patrón Añejo Aged', '40%', "Patrón Añejo Aged.jpg"],
+                ]
+            },
+            {
+                category: 'Brandy', icon: '🍇', drinks: [
+                    ['Metaxa Brandy', '38%', 'Metaxa.jpg'],
+                    ['CR&F Old Reserve Brandy', '40%', 'CR&F Old Reserve Brandy.jpg'],
+                    ['Slivovice Plum Brandy', '40%', 'Slivovice Plum Brandy.jpg'],
+                    ['Cognac Meukow', '40%', 'Cognac Meukow.jpg'],
+                ]
+            },
+            {
+                category: 'Wine', icon: '🍷', drinks: [
+                    ['Sake Samurai', '16%', 'Sake Samurai.jpg'],
+                ]
+            },
+            {
+                category: 'Spirits / Aperitifs & Fortified', icon: '🍹', drinks: [
+                    ['Aperol', '11%', 'Aperol.jpg'],
+                    ['Campari', '25%', 'Campari.jpg'],
+                    ['Martini Extra Dry', '18%', 'Martini Extra Dry.jpg'],
+                ]
+            },
+            {
+                category: 'Liqueurs', icon: '🍬', drinks: [
+                    ['Cherry Liqueur', '24%', 'Cherry Liqueur.jpg'],
+                    ['Passion Fruit Liqueur', '17%', 'Passion Fruit Liqueur.jpg'],
+                    ['Coffee Liqueur', '15%', 'Coffee Liqueur.jpg'],
+                    ['Mozart Chocolate Liqueur', '17%', 'Mozart Chocolate Liqueur.jpg'],
+                    ['Lemoncello', '30%', 'Lemoncello.jpg'],
+                    ['Cointreau Orange', '40%', 'Cointreau Orange.jpg'],
+                    ['Bardinet Crème de Cassis', '16%', 'Bardinet Crème de Cassis.jpg'],
+                    ['Strawberry Liqueur With Vodka', '15%', 'Strawberry Liqueur With Vodka.jpg'],
+                    ['Amarula', '17%', 'Amarula.jpg'],
+                    ['Klap van de Meule Kruidenlikeur', '28%', 'Klap van de Meule Kruidenlikeur.jpg'],
+                    ['Mozart White Chocolate Cream Strawberry', '15%', 'Mozart White Chocolate Cream Strawberry.jpg'],
+                    ['Jägermeister Manifest', '38%', 'Jägermeister Manifest.jpg'],
+                    ['Sunny Garden Forest Fruits Original', '13%', 'Sunny Garden Forest Fruits Original.jpg'],
+                    ['Baileys Original Irish Cream', '17%', 'Baileys Original Irish Cream.jpg'],
+                    ['Luxardo Sour Apple', '15%', 'Luxardo Sour Apple.jpg'],
+                ]
+            },
+            {
+                category: 'Anise', icon: '⭐', drinks: [
+                    ["Elite Ha'arak", '40%', 'Elite Haarak.jpg'],
+                    ['Lemon Arak', '14%', 'Lemon Arak.jpg'],
+                    ['Ouzo', '40%', 'Ouzo.jpg'],
+                ]
+            },
+        ];
+
+        // Base path to drinks images folder (relative from pages/)
+        const DRINKS_IMG_BASE = '../images/drinks/';
+
+        function buildBar() {
+            const container = document.getElementById('barMenuContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            BAR_DATA.forEach((cat, ci) => {
+                const catDiv = document.createElement('div');
+                catDiv.className = 'bar-category';
+                catDiv.setAttribute('data-aos', 'fade-up');
+                catDiv.setAttribute('data-aos-delay', String(ci * 30));
+
+                // Centered header
+                const header = document.createElement('div');
+                header.className = 'bar-category-header';
+                const catKey = 'bar.category.' + cat.category.toLowerCase().replace(/[^a-z0-9]/g, '');
+                const translatedCategory = (window.MoshkoLang) ? window.MoshkoLang.t(catKey) : cat.category;
+                header.innerHTML = `<span class="bar-cat-icon">${cat.icon}</span><h3 class="bar-cat-name" data-i18n="${catKey}">${translatedCategory}</h3>`;
+                catDiv.appendChild(header);
+
+                const grid = document.createElement('div');
+                grid.className = 'bar-drinks-grid';
+                catDiv.appendChild(grid);
+
+                cat.drinks.forEach(([name, alc, imgFile]) => {
+                    const folderSrc = imgFile ? DRINKS_IMG_BASE + encodeURIComponent(imgFile) : null;
+                    const hasPhoto = !!folderSrc;
+
+                    const card = document.createElement('div');
+                    card.className = 'drink-card glass-card';
+
+                    // Photo area
+                    const area = document.createElement('div');
+                    area.className = 'drink-photo-area';
+
+                    if (hasPhoto) {
+                        const img = document.createElement('img');
+                        img.src = folderSrc;
+                        img.alt = name;
+                        img.classList.add('has-photo');
+                        // Hide if failed to load
+                        img.onerror = () => {
+                            img.style.display = 'none';
+                        };
+                        area.appendChild(img);
+                    }
+
+                    // Info
+                    const info = document.createElement('div');
+                    info.className = 'drink-info';
+                    info.innerHTML = `<div class="drink-name">${name}</div><div class="drink-alc">${alc}</div>`;
+
+                    card.appendChild(area);
+                    card.appendChild(info);
+                    grid.appendChild(card);
+                });
+
+                container.appendChild(catDiv);
+            });
+
+            if (window.AOS) AOS.refreshHard();
+        }
+
+        document.addEventListener('DOMContentLoaded', buildBar);
+        window.addEventListener('page-load', buildBar);
+        window.addEventListener('lang-change', buildBar);
+    </script>
+</body>
+
+</html>

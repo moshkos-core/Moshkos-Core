@@ -6,6 +6,17 @@ const UPDATES_CONFIG = {
 
 const UPDATES_DATA = [
     {
+        order: 8,
+        version: "v2.1.0",
+        date: "June 19, 2026",
+        date_he: "19 ביוני 2026",
+        icon: "🍺",
+        title: "Drinks menu",
+        title_he: "תפריט משקאות",
+        description: "My drinks menu was added to the site!",
+        description_he: "תפריט המשקאות שלי נוסף לאתר!"
+    },
+    {
         order: 7,
         version: "v2.0.3",
         date: "April 12, 2026",

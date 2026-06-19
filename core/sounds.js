@@ -190,8 +190,12 @@
         } catch (e) { }
     }
 
+    function isRagdollDisabled() {
+        return document.body.classList.contains('ragdoll-disabled');
+    }
+
     function playHitSound() {
-        if (_isMuted || _hitCooldown) return;
+        if (_isMuted || _hitCooldown || isRagdollDisabled()) return;
         if (helloVoice) { helloVoice.pause(); helloVoice.currentTime = 0; }
         _hitCooldown = true;
         setTimeout(() => { _hitCooldown = false; }, 300);
@@ -203,7 +207,7 @@
     }
 
     function playScream() {
-        if (_isMuted || _screamCooldown) return;
+        if (_isMuted || _screamCooldown || isRagdollDisabled()) return;
         _screamCooldown = true;
         setTimeout(() => { _screamCooldown = false; }, 800);
         try {
@@ -215,7 +219,7 @@
     }
 
     function playGrabSound() {
-        if (_isMuted) return;
+        if (_isMuted || isRagdollDisabled()) return;
         if (helloVoice) { helloVoice.pause(); helloVoice.currentTime = 0; }
         try {
             const ctx = getCtx();
@@ -236,7 +240,7 @@
     }
 
     function playSkinChangeSound() {
-        if (_isMuted) return;
+        if (_isMuted || isRagdollDisabled()) return;
         try {
             const ctx = getCtx();
             const t = ctx.currentTime;
@@ -257,7 +261,7 @@
     }
 
     function playResetSound() {
-        if (_isMuted) return;
+        if (_isMuted || isRagdollDisabled()) return;
         try {
             const ctx = getCtx();
             const t = ctx.currentTime;
@@ -333,7 +337,7 @@
     }
 
     function playWaveSound() {
-        if (_isMuted) return;
+        if (_isMuted || isRagdollDisabled()) return;
         // In Hebrew mode — play shalom.mp3
         if (window.MoshkoLang && window.MoshkoLang.current === 'he') {
             try {
@@ -356,7 +360,7 @@
     }
 
     function playAirSound(type) {
-        if (_isMuted || _flyState === type) return;
+        if (_isMuted || _flyState === type || isRagdollDisabled()) return;
         _flyState = type;
         if (type === 'fall') {
             try {
@@ -375,7 +379,7 @@
 
     function startDragLoop() {
         window.isRagdollGrabbed = true;
-        if (_isMuted || _dragSynth) return;
+        if (_isMuted || _dragSynth || isRagdollDisabled()) return;
         try {
             const ctx = getCtx();
             const t = ctx.currentTime;

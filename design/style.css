@@ -308,7 +308,7 @@ img {
 }
 
 .img-protected::after {
-    content: "Â© MOSHKO'S - DO NOT COPY";
+    content: "Ã‚Â© MOSHKO'S - DO NOT COPY";
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -947,7 +947,7 @@ section,
    Subpage Headers
    ======================================== */
 .page-header {
-    padding-top: 22vh !important;
+    padding-top: 25vh !important;
     padding-bottom: 2rem !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1372,8 +1372,9 @@ section,
    Minecraft Section
    ======================================== */
 .minecraft-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-2xl);
 }
@@ -1393,6 +1394,8 @@ section,
 .minecraft-card {
     padding: var(--spacing-xl) !important;
     text-align: center;
+    flex: 1 1 380px;
+    max-width: 450px;
 }
 
 .minecraft-header {
@@ -1449,7 +1452,7 @@ section,
    Page Header (for sub-pages)
    ======================================== */
 .page-header {
-    padding-top: 15vh !important;
+    padding-top: 25vh !important;
     padding-bottom: 2rem !important;
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
@@ -3244,9 +3247,9 @@ canvas:hover {
 /* ========================================
    PAGE HEADER SPACING FIX
    ======================================== */
-/* .page-header duplicate removed — defined once above */
+/* .page-header duplicate removed â€” defined once above */
 
-/* .page-title duplicate removed — defined once at line ~1121 */
+/* .page-title duplicate removed â€” defined once at line ~1121 */
 
 .page-subtitle {
     text-align: center;
@@ -3449,7 +3452,7 @@ canvas:hover {
     background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
 }
 
-/* .parlamentum-header .page-title override removed — uses shared .page-title rule */
+/* .parlamentum-header .page-title override removed â€” uses shared .page-title rule */
 .parlamentum-header .page-title {
     animation: gradient-shift 4s ease infinite;
     background-size: 200% auto;
@@ -3743,6 +3746,13 @@ canvas:hover {
 
 /* light red    */
 
+.role-leave {
+    --dot-color: #6B7280;
+    --card-color: #6B7280;
+}
+
+/* gray         */
+
 /* ===== TOTAL COUNTER ===== */
 .timeline-stats {
     display: flex;
@@ -3897,9 +3907,9 @@ canvas:hover {
     border: 1px solid rgba(139, 92, 246, 0.3);
 }
 /* Sync all Page Headers to Home Hero Theme */
-/* .parlamentum-header, .page-header duplicate removed — consolidated at line ~1111 */
+/* .parlamentum-header, .page-header duplicate removed â€” consolidated at line ~1111 */
 
-/* .page-title + .hero-title override removed — both defined cleanly above */
+/* .page-title + .hero-title override removed â€” both defined cleanly above */
 
 /* ========================================
    Floating Settings Sub-Menu
@@ -4083,4 +4093,10 @@ canvas:hover {
 .lang-toggle,
 .mute-toggle {
     direction: ltr !important;
+}
+
+body.ragdoll-disabled #ragdollCanvas,
+body.ragdoll-disabled #ragdoll-control-panel,
+body.ragdoll-disabled #ragdoll-container {
+    display: none !important;
 }
