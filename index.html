@@ -90,12 +90,18 @@
     <div id="ragdoll-container"></div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="data/info_data.js"></script>
-    <script src="data/updates_data.js"></script>
-    <script src="core/lang.js"></script>
-    <script src="core/shared.js"></script>
-    <script src="core/script.js"></script>
-    <script src="core/sounds.js?v=20"></script>
+    <script src="data/info_data.js?v=21"></script>
+    <script src="data/updates_data.js?v=21"></script>
+    <script src="core/lang.js?v=21"></script>
+    <script src="core/shared.js?v=21"></script>
+    <script src="core/script.js?v=21"></script>
+    <script src="core/sounds.js?v=21"></script>
+    <script>
+        // Fallback: re-apply translations after everything is fully loaded
+        window.addEventListener('load', function () {
+            if (window.MoshkoLang) window.MoshkoLang.apply();
+        });
+    </script>
 </body>
 
 </html>
