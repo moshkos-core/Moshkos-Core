@@ -56,12 +56,16 @@
                     <span class="stat-label" data-i18n="timeline.stat.roles">Role Count</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number" id="stat-years">3+</span>
-                    <span class="stat-label" data-i18n="timeline.stat.tenure">Service Tenure</span>
+                    <span class="stat-number" id="stat-years">4</span>
+                    <span class="stat-label" data-i18n="timeline.stat.tenure">Years of Service</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number" id="stat-since">2022</span>
                     <span class="stat-label" data-i18n="timeline.stat.since">Commissioned In</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="stat-ended">2026</span>
+                    <span class="stat-label" data-i18n="timeline.stat.ended">Commissioned Out</span>
                 </div>
             </div>
 
@@ -122,8 +126,11 @@
             const years = new Set(sorted.map(e => e.date.split('/')[2]));
 
             document.getElementById('stat-roles').textContent = PARLAMENTUM_STATS.rolesCount || sorted.length;
-            document.getElementById('stat-years').textContent = PARLAMENTUM_STATS.yearsActive || (years.size + '+');
+            document.getElementById('stat-years').textContent = PARLAMENTUM_STATS.yearsActive || years.size;
             document.getElementById('stat-since').textContent = PARLAMENTUM_STATS.yearJoined || Math.min(...[...years].map(Number));
+            if (document.getElementById('stat-ended')) {
+                document.getElementById('stat-ended').textContent = PARLAMENTUM_STATS.yearEnded || Math.max(...[...years].map(Number));
+            }
 
             const root = document.getElementById('timeline-root');
             root.innerHTML = '';

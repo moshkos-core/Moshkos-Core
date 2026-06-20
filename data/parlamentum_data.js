@@ -30,8 +30,9 @@
 
 const PARLAMENTUM_STATS = {
     rolesCount: "12",     // Leave empty ("") to auto-calculate
-    yearsActive: "4+",    // Leave empty ("") to auto-calculate
-    yearJoined: "2022"    // Leave empty ("") to auto-calculate
+    yearsActive: "4",     // Leave empty ("") to auto-calculate
+    yearJoined: "2022",   // Leave empty ("") to auto-calculate
+    yearEnded: "2026"     // Leave empty ("") to auto-calculate
 };
 
 const PARLAMENTUM_TIMELINE = [

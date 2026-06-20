@@ -58,8 +58,9 @@ window.MoshkoLang = {
             'timeline.title': 'Parlamentum Staff Timeline',
             'timeline.subtitle': 'My Path Through the Parlamentum Staff!',
             'timeline.stat.roles': 'Role Count',
-            'timeline.stat.tenure': 'Service Tenure',
+            'timeline.stat.tenure': 'Years of Service',
             'timeline.stat.since': 'Commissioned In',
+            'timeline.stat.ended': 'Commissioned Out',
 
             // ── Minecraft page ───────────────────────────────────────
             'minecraft.title': 'Minecraft Specialty',
@@ -190,8 +191,9 @@ window.MoshkoLang = {
             'timeline.title': 'ציר הזמן של צוות פרלמנטום',
             'timeline.subtitle': '!המסלול שלי בצוות הפרלמנטום',
             'timeline.stat.roles': 'מספר תפקידים',
-            'timeline.stat.tenure': 'זמן בצוות',
+            'timeline.stat.tenure': 'שנות שירות',
             'timeline.stat.since': 'שנת הצטרפות',
+            'timeline.stat.ended': 'שנת פרישה',
 
             // ── Minecraft page ───────────────────────────────────────
             'minecraft.title': 'התמחות מיינקראפט',
