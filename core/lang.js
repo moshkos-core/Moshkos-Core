@@ -49,6 +49,9 @@ window.MoshkoLang = {
             'home.about.title': 'About Me',
             'home.about.p1': 'Cooking and chilling at the beach are my favorite ways to relax and recharge. These hobbies grant me the personal space where I can focus on myself and bridge tranquility with creativity.',
             'home.about.p2': 'I have been playing Minecraft for 12 years, I specialize in building and managing professional Discord servers, including design and customization. I combine creativity and management to bring value to the communities I am a part of.',
+            'home.stat.age': 'Age',
+            'home.stat.region': 'Region',
+            'home.stat.region.value': 'Israel',
 
             // ── Updates page ─────────────────────────────────────────
             'updates.title': 'Latest Updates',
@@ -199,6 +202,9 @@ window.MoshkoLang = {
             'home.about.title': 'קצת עליי',
             'home.about.p1': 'בישול ושהייה בים הם הדרכים האהובות עליי להירגע ולהטעין מצברים. התחביבים האלו מעניקים לי את המרחב האישי שבו אני יכול להתמקד בעצמי ולחבר בין שלווה ליצירתיות.',
             'home.about.p2': 'אני משחק במיינקראפט כבר 12 שנים, אני מתמחה בבנייה וניהול שרתי דיסקורד מקצועיים, כולל עיצוב והתאמה אישית. אני משלב יצירתיות וניהול כדי להביא ערך לקהילות שאני חלק מהן.',
+            'home.stat.age': 'גיל',
+            'home.stat.region': 'אזור',
+            'home.stat.region.value': 'ישראל',
 
             // ── Updates page ─────────────────────────────────────────
             'updates.title': 'עדכונים אחרונים',

@@ -94,11 +94,28 @@ function attachGameCardListeners() {
     });
 }
 
+function updateDynamicAge() {
+    const ageEl = document.getElementById('home-stat-age');
+    if (!ageEl) return;
+    const birthDate = new Date(2005, 7, 24); // August 24, 2005 (0-indexed month)
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    ageEl.textContent = age;
+}
+
 // ========================================
 // Main Initialization
 // ========================================
 window.initPage = function () {
     console.log('Initializing Page Logic...');
+    updateDynamicAge();
+    if (!window._ageInterval) {
+        window._ageInterval = setInterval(updateDynamicAge, 60 * 60 * 1000); // Check every hour
+    }
     // Attach listeners to any static game cards immediately
     attachGameCardListeners();
 
@@ -690,14 +707,14 @@ async function loadUpdates() {
     if (!rawUpdates || rawUpdates.length === 0) return;
 
     const isHomePage = window.location.pathname.includes('home.html') || window.location.pathname.endsWith('/') || window.location.pathname === '';
-    
+
     // Explicitly sort by order/date, using array order as a tie-breaker
     const config = window.UPDATES_CONFIG || { sortOrder: 'desc' };
     const sortedUpdates = [...rawUpdates]
         .map((u, i) => ({ ...u, _index: i }))
         .sort((a, b) => {
             const isDesc = config.sortOrder === 'desc';
-            
+
             // 1. Manual Order Priority (e.g., if 1 is oldest, then in 'desc' mode highest order comes first)
             if (a.order !== undefined && b.order !== undefined) {
                 return isDesc ? b.order - a.order : a.order - b.order;
@@ -708,13 +725,13 @@ async function loadUpdates() {
             // 2. Date Sort
             const dateA = new Date(a.date);
             const dateB = new Date(b.date);
-            
+
             let dateDiff = isDesc ? dateB - dateA : dateA - dateB;
-            
+
             // 3. Fallback: Array Index
             return dateDiff !== 0 ? dateDiff : a._index - b._index;
         });
-        
+
     const updates = isHomePage ? sortedUpdates.slice(0, 3) : sortedUpdates;
 
     container.innerHTML = updates.map(update => `
