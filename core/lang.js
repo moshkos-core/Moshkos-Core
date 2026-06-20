@@ -148,6 +148,23 @@ window.MoshkoLang = {
             'bar.category.spiritsaperitifsfortified': 'Spirits / Aperitifs & Fortified',
             'bar.category.liqueurs': 'Liqueurs',
             'bar.category.anise': 'Anise',
+
+            // ── Timeline Roles ───────────────────────────────────────
+            'בטא': 'Beta',
+            'צוות אירועים': 'Events Team',
+            'ג\'וניור הלפר': 'Junior Helper',
+            'הלפר': 'Helper',
+            'עלייה למוד': 'Promoted to Moderator',
+            'חזרה לצוות כהלפר': 'Returned to Staff as Helper',
+            'עוזר בדיסקורד': 'Discord Helper',
+            'עלייה למפקח בדיסקורד': 'Promoted to Discord Moderator',
+            'צוות דיגיטל': 'Digital Team',
+            'אחראי צוות אירועים': 'Head of Events Team',
+            'צוות קינפוג': 'Configuration Team',
+            'עלייה למפקח בכיר בדיסקורד': 'Promoted to Senior Discord Moderator',
+            'חזרה לצוות קינפוג': 'Returned to Configuration Team',
+            'סגן אחראי דיסקורד': 'Vice Head of Discord',
+            'פרישה מהצוות': 'Retired from Staff',
         },
 
         he: {
@@ -284,6 +301,23 @@ window.MoshkoLang = {
             'bar.category.spiritsaperitifsfortified': 'משקאות חריפים / אפריטיפים ומחוזקים',
             'bar.category.liqueurs': 'ליקרים',
             'bar.category.anise': 'אניס',
+
+            // ── Timeline Roles (Hebrew) ──────────────────────────────
+            'בטא': 'בטא',
+            'צוות אירועים': 'צוות אירועים',
+            'ג\'וניור הלפר': 'ג\'וניור הלפר',
+            'הלפר': 'הלפר',
+            'עלייה למוד': 'עלייה למוד',
+            'חזרה לצוות כהלפר': 'חזרה לצוות כהלפר',
+            'עוזר בדיסקורד': 'עוזר בדיסקורד',
+            'עלייה למפקח בדיסקורד': 'עלייה למפקח בדיסקורד',
+            'צוות דיגיטל': 'צוות דיגיטל',
+            'אחראי צוות אירועים': 'אחראי צוות אירועים',
+            'צוות קינפוג': 'צוות קינפוג',
+            'עלייה למפקח בכיר בדיסקורד': 'עלייה למפקח בכיר בדיסקורד',
+            'חזרה לצוות קינפוג': 'חזרה לצוות קינפוג',
+            'סגן אחראי דיסקורד': 'סגן אחראי דיסקורד',
+            'פרישה מהצוות': 'פרישה מהצוות',
         }
     },
 

@@ -110,11 +110,16 @@
 
         function formatDate(str) {
             const [d, m, y] = str.split('/');
-            // Use translated month names if MoshkoLang is available
+            const isHe = window.MoshkoLang && window.MoshkoLang.current === 'he';
             const months = (window.MoshkoLang)
                 ? window.MoshkoLang.monthNames()
                 : ['January','February','March','April','May','June','July','August','September','October','November','December'];
-            return `${months[parseInt(m) - 1]} ${parseInt(d)}`;
+            
+            if (isHe) {
+                return `${parseInt(d)} ב${months[parseInt(m) - 1]}`;
+            } else {
+                return `${months[parseInt(m) - 1]} ${parseInt(d)}`;
+            }
         }
 
         /* -- Build Timeline ------------------------------------ */
@@ -163,10 +168,12 @@
                 item.setAttribute('data-aos', isRight ? 'fade-left' : 'fade-right');
                 item.setAttribute('data-aos-delay', '50');
 
+                const displayTitle = window.MoshkoLang ? window.MoshkoLang.t(entry.title.trim()) : entry.title;
+
                 item.innerHTML = `
                 <div class="timeline-card">
                     <span class="card-icon">${entry.icon}</span>
-                    <div class="card-title">${entry.title}</div>
+                    <div class="card-title">${displayTitle}</div>
                     <div class="card-date">${formatDate(entry.date)}</div>
                 </div>
             `;

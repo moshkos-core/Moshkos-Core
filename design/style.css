@@ -1417,7 +1417,7 @@ section,
 .minecraft-card {
     padding: var(--spacing-xl) !important;
     text-align: center;
-    flex: 1 1 380px;
+    flex: 1 1 300px;
     max-width: 450px;
 }
 
@@ -3552,7 +3552,7 @@ canvas:hover {
     align-items: center;
     gap: 0.75rem;
     margin: 1.5rem auto;
-    max-width: 700px;
+    max-width: 950px;
     padding: 0 1.5rem;
 }
 
@@ -3585,7 +3585,7 @@ canvas:hover {
 
 .timeline-container {
     position: relative;
-    max-width: 700px;
+    max-width: 950px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -3668,14 +3668,20 @@ canvas:hover {
     background: rgba(139, 92, 246, 0.07);
     border: 1px solid rgba(139, 92, 246, 0.25);
     border-radius: 12px;
-    padding: 0.9rem 1.2rem 0.9rem 3.2rem;
     backdrop-filter: blur(12px);
-    max-width: 350px;
+    max-width: 450px;
     width: 100%;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     cursor: default;
+    /* Default (Left-side card): padding leaves space on the right for the icon */
+    padding: 0.9rem 3.2rem 0.9rem 1.2rem;
+}
+
+.timeline-item.right .timeline-card {
+    /* Right-side card: padding leaves space on the left for the icon */
+    padding: 0.9rem 1.2rem 0.9rem 3.2rem;
 }
 
 .timeline-card::before {
@@ -3704,8 +3710,19 @@ canvas:hover {
     font-weight: 700;
     color: var(--card-color, #A78BFA);
     margin-bottom: 0.25rem;
-    direction: rtl;
     letter-spacing: 0.03em;
+}
+
+/* Left card title: align left */
+.timeline-item .card-title {
+    text-align: left;
+    direction: ltr;
+}
+
+/* Right card title: align right */
+.timeline-item.right .card-title {
+    text-align: right;
+    direction: rtl;
 }
 
 .card-date {
@@ -3716,8 +3733,6 @@ canvas:hover {
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: flex-start;
-    direction: rtl;
     gap: 0.3rem;
 }
 
@@ -3726,17 +3741,37 @@ canvas:hover {
     font-size: 0.9rem;
 }
 
+/* Left card date spacing and alignment: align left */
+.timeline-item .card-date {
+    justify-content: flex-start;
+    direction: rtl;
+    flex-direction: row-reverse;
+}
+
+/* Right card date spacing and alignment: align right */
+.timeline-item.right .card-date {
+    justify-content: flex-start;
+    direction: rtl;
+    flex-direction: row;
+}
+
 .card-icon {
     position: absolute;
     top: 50%;
-    left: 1rem;
     transform: translateY(-50%);
-    font-size: 1.4rem;
-    opacity: 0.8;
+    font-size: 1.8rem;
+    opacity: 0.95;
 }
 
+/* Left card icon: right aligned */
+.timeline-item .card-icon {
+    right: 1.2rem;
+    left: auto;
+}
+
+/* Right card icon: left aligned */
 .timeline-item.right .card-icon {
-    left: 0.9rem;
+    left: 1.2rem;
     right: auto;
 }
 
@@ -3828,7 +3863,7 @@ canvas:hover {
     gap: 1.2rem;
     flex-wrap: wrap;
     margin: 1rem auto 4rem;
-    max-width: 900px;
+    max-width: 1100px;
     padding: 0 1.5rem;
 }
 
@@ -3836,11 +3871,11 @@ canvas:hover {
     background: rgba(139, 92, 246, 0.08);
     border: 1px solid rgba(139, 92, 246, 0.25);
     border-radius: 14px;
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem 2.2rem;
     text-align: center;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    min-width: 160px;
+    min-width: 220px;
 }
 
 .stat-card:hover {
