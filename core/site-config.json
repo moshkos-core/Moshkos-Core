@@ -1,0 +1,165 @@
+{
+    "site": {
+        "title": "Moshko's Core - Home",
+        "description": "Moshko's Core - Epic Games & Minecraft Adventures",
+        "copyright": "© Moshko's Core - All rights reserved.",
+        "footerCredits": "Created By Shahar.M"
+    },
+    "navigation": {
+        "home": "Home",
+        "updates": "Updates",
+        "games": "Games",
+        "minecraft": "Minecraft"
+    },
+    "contact": {
+        "title": "🔗 Contact Info",
+        "dropdownLinks": [
+            {
+                "label": "Discord",
+                "type": "link",
+                "url": "https://discord.com/users/538697561209307136",
+                "icon": "images/icons/discord.svg",
+                "cssClass": "discord"
+            },
+            {
+                "label": "Instagram",
+                "type": "link",
+                "url": "https://instagram.com/shaharmoshko_",
+                "icon": "images/icons/instagram.svg",
+                "cssClass": "instagram"
+            },
+            {
+                "label": "moshkosha@gmail.com",
+                "type": "email",
+                "address": "moshkosha@gmail.com",
+                "icon": "images/icons/gmail.svg",
+                "cssClass": "email-general"
+            },
+            {
+                "label": "NameMC",
+                "type": "link",
+                "url": "https://namemc.com/profile/MoshkoThoughts_",
+                "icon": "images/icons/namemc.jpg",
+                "cssClass": "namemc"
+            },
+            {
+                "label": "Steam",
+                "type": "link",
+                "url": "https://steamcommunity.com/profiles/76561199103335898/",
+                "icon": "images/icons/steam.svg",
+                "cssClass": "steam"
+            },
+            {
+                "label": "Spotify",
+                "type": "link",
+                "url": "https://open.spotify.com/user/zb1x4pnjevbxccyuykcv3kdnn?si=eb4c632fea114c95",
+                "icon": "images/icons/spotify.svg",
+                "cssClass": "spotify"
+            }
+        ]
+    },
+    "hero": {
+        "title": "Welcome to Moshko's Core",
+        "subtitle": "Moshko's Core - A place where ideas come to life!",
+        "btnPlay": "Explore Minecraft",
+        "btnExplore": "Visit the Bar"
+    },
+    "about": {
+        "title": "About me",
+        "bio": [
+            "בישול ושהייה בים הם הדרכים האהובות עליי להירגע ולהטעין מצברים. התחביבים האלו מעניקים לי את המרחב האישי שבו אני יכול להתמקד בעצמי ולחבר בין שלווה ליצירתיות.",
+            "אני ני משחק במיינקראפט כבר 12 שנים, אני מתמחה בבנייה וניהול שרתי דיסקורד מקצועיים, כולל עיצוב והתאמה אישית. אני משלב יצירתיות וניהול כדי להביא ערך לקהילות שאני חלק מהן."
+        ]
+    },
+    "quickLinks": {
+        "title": "Explore Moshko's Core",
+        "updates": {
+            "title": "Latest Updates",
+            "desc": "Stay current with new games, features, and community news"
+        },
+        "games": {
+            "title": "Play Games",
+            "desc": "8 epic games to challenge your skills"
+        },
+        "minecraft": {
+            "title": "Minecraft",
+            "desc": "Custom packs and amazing builds"
+        }
+    },
+    "games": [
+        {
+            "id": "clicker",
+            "icon": "🎯",
+            "title": "Dragon Clicker",
+            "desc": "Hunt the targets, gain the brew!",
+            "btn": "START MISSION"
+        },
+        {
+            "id": "snake",
+            "icon": "🐲",
+            "title": "Cosmic Snake",
+            "desc": "Collect Beer Mugs, grow your tail!",
+            "btn": "START MISSION"
+        },
+        {
+            "id": "2048",
+            "icon": "💎",
+            "title": "Dragon 2048",
+            "done": "Combine brews to reach the Golden Dragon!",
+            "btn": "START MISSION"
+        },
+        {
+            "id": "flappy",
+            "icon": "🦇",
+            "title": "Flappy Dragon",
+            "desc": "Dodge the pipes and reach the nebula!",
+            "btn": "START MISSION"
+        },
+        {
+            "id": "stack",
+            "icon": "📦",
+            "title": "Brew Stack",
+            "desc": "Stack the crates to the stars!",
+            "btn": "START MISSION"
+        },
+        {
+            "id": "race",
+            "icon": "🏎️",
+            "title": "Dragon Wing Race",
+            "desc": "High-speed arcade vector racing!",
+            "btn": "START MISSION"
+        },
+        {
+            "id": "pong",
+            "icon": "🎾",
+            "title": "Beer Pong Galaxy",
+            "desc": "Master the neon cosmic bounce!",
+            "btn": "START MISSION"
+        },
+        {
+            "id": "breath",
+            "icon": "👾",
+            "title": "Dragon Breath",
+            "desc": "Defend the brewery with cosmic fire!",
+            "btn": "START MISSION"
+        }
+    ],
+    "updates": [
+        {
+            "id": 1,
+            "version": "v1.9.0",
+            "icon": "🚀",
+            "title": "Site Relaunch",
+            "desc": "The new cosmic hub is officially live!",
+            "date": "Jan 10, 2026"
+        },
+        {
+            "id": 2,
+            "version": "v1.8.2",
+            "icon": "🎮",
+            "title": "New Games Added",
+            "desc": "Treasure Hunt and Bottle Flip are now playable.",
+            "date": "Jan 9, 2026"
+        }
+    ]
+}
