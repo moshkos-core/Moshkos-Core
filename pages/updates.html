@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latest updates and news from Moshko's Core!">
+    <title>Updates - Moshko's Core</title>
+    <link rel="stylesheet" href="../design/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .update-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .update-version {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--color-primary-light);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            letter-spacing: 0.05em;
+        }
+
+        [data-theme="light"] .update-version {
+            background: rgba(124, 62, 237, 0.08);
+            border-color: rgba(124, 62, 237, 0.2);
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="space-background"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <script src="../ragdoll/ragdoll_physics.js"></script>
+    <script src="../ragdoll/ragdoll_background.js"></script>
+    <script src="../ragdoll/tnt.js"></script>
+
+    <nav class="navbar" id="navbar"></nav>
+
+    <div id="content-root">
+        <main id="main-content">
+            <section class="page-header">
+                <div class="container">
+                    <h1 class="page-title" data-aos="fade-up" data-i18n="updates.title">Latest Updates</h1>
+                    <p class="page-subtitle" data-aos="fade-up" data-i18n="updates.subtitle">Stay current with what's new in Moshko's Core!</p>
+                </div>
+            </section>
+
+            <section class="section updates-section">
+                <div class="container">
+                    <div class="updates-grid" id="updates-root">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer"></footer>
+
+    <div id="ragdoll-container"></div>
+    <div class="skin-control-panel">
+        <input type="text" id="skin-username" placeholder="Minecraft Username" data-i18n="skin.placeholder" value="">
+        <button onclick="window.changeSkin(document.getElementById('skin-username').value)" data-i18n="skin.btn.change">Change Skin</button>
+        <button onclick="window.resetRagdoll()" style="background: #e74c3c;" data-i18n="skin.btn.reset">Reset</button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../data/info_data.js"></script>
+    <script src="../core/lang.js"></script>
+    <script src="../core/shared.js"></script>
+    <script src="../core/script.js"></script>
+    <script src="../data/updates_data.js"></script>
+    <script>
+        function loadUpdates() {
+            const root = document.getElementById('updates-root');
+            if (!root) return;
+            root.innerHTML = '';
+            const isHe = window.MoshkoLang && window.MoshkoLang.current === 'he';
+            const config = window.UPDATES_CONFIG || { sortOrder: 'desc' };
+            const sorted = [...UPDATES_DATA]
+                .map((u, i) => ({ ...u, _index: i }))
+                .sort((a, b) => {
+                    const isDesc = config.sortOrder === 'desc';
+
+                    // 1. Manual Order Priority
+                    if (a.order !== undefined && b.order !== undefined) {
+                        return isDesc ? b.order - a.order : a.order - b.order;
+                    }
+                    if (a.order !== undefined) return isDesc ? -1 : 1;
+                    if (b.order !== undefined) return isDesc ? 1 : -1;
+
+                    // 2. Date Sort
+                    const dateA = new Date(a.date);
+                    const dateB = new Date(b.date);
+
+                    let dateDiff = isDesc ? dateB - dateA : dateA - dateB;
+
+                    return dateDiff !== 0 ? dateDiff : a._index - b._index;
+                });
+            sorted.forEach((u) => {
+                const title = (isHe && u.title_he) ? u.title_he : u.title;
+                const desc  = (isHe && u.description_he) ? u.description_he : u.description;
+                const date  = (isHe && u.date_he) ? u.date_he : u.date;
+                const card = document.createElement('div');
+                card.className = "update-card glass-card";
+                card.setAttribute('data-aos', 'fade-up');
+                card.innerHTML = `
+                    <div class="update-icon">${u.icon}</div>
+                    <div class="update-content">
+                        <h3>${title}</h3>
+                        <div class="update-meta">
+                            <span class="update-version">${u.version || ''}</span>
+                            <span class="update-date">${date}</span>
+                        </div>
+                        <p>${desc}</p>
+                    </div>
+                `;
+                root.appendChild(card);
+            });
+            if (window.AOS) AOS.refreshHard();
+        }
+        loadUpdates();
+        window.addEventListener('page-load', loadUpdates);
+        window.addEventListener('lang-change', loadUpdates);
+    </script>
+    <script src="../core/sounds.js?v=20"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play epic Moshko's Core-themed games!">
+    <title>Games - Moshko's Core</title>
+    <link rel="stylesheet" href="../design/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="space-background">
+        <!-- populated by shared.js -->
+    </div>
+
+    <!-- Global Libraries (Safe for file:// usage) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+
+    <!-- App Logic -->
+    <script src="../ragdoll/ragdoll_physics.js"></script>
+    <script src="../ragdoll/ragdoll_background.js"></script>
+    <script src="../ragdoll/tnt.js"></script>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <!-- populated by shared.js -->
+    </nav>
+
+    <div id="content-root">
+        <main id="main-content">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="container">
+                    <h1 class="page-title" data-aos="fade-up" id="dynGamesTitle" data-i18n="games.title">Games</h1>
+                    <p class="page-subtitle" data-aos="fade-up" id="dynGamesSubtitle" data-i18n="games.subtitle">Play
+                        fun mini-games made by Moshko's Core!</p>
+                </div>
+            </section>
+
+            <!-- Games Section -->
+            <section class="section games-section">
+                <div class="container" id="gamesContainer">
+                    <!-- Game Display Area (where active game loads) -->
+                    <div id="gameArea" style="margin-bottom: 3rem;"></div>
+
+                    <div class="games-grid">
+                        <div class="game-card glass-card" data-aos="zoom-in" data-game="clicker">
+                            <div class="game-icon">🎯</div>
+                            <h3 data-i18n="game.clicker.title">Dragon Clicker</h3>
+                            <p data-i18n="game.clicker.desc">Hunt the targets, gain the brew!</p>
+                        </div>
+                        <div class="game-card glass-card" data-aos="zoom-in" data-aos-delay="50" data-game="snake">
+                            <div class="game-icon">🐲</div>
+                            <h3 data-i18n="game.snake.title">Cosmic Snake</h3>
+                            <p data-i18n="game.snake.desc">Collect Beer Mugs, grow your tail!</p>
+                        </div>
+                        <div class="game-card glass-card" data-aos="zoom-in" data-aos-delay="100" data-game="2048">
+                            <div class="game-icon">💎</div>
+                            <h3 data-i18n="game.2048.title">Dragon 2048</h3>
+                            <p data-i18n="game.2048.desc">Combine brews to reach the Golden Dragon!</p>
+                        </div>
+                        <div class="game-card glass-card" data-aos="zoom-in" data-aos-delay="150" data-game="flappy">
+                            <div class="game-icon">🦇</div>
+                            <h3 data-i18n="game.flappy.title">Flappy Dragon</h3>
+                            <p data-i18n="game.flappy.desc">Dodge the pipes and reach the nebula!</p>
+                        </div>
+                        <div class="game-card glass-card" data-aos="zoom-in" data-aos-delay="200" data-game="stack">
+                            <div class="game-icon">📦</div>
+                            <h3 data-i18n="game.stack.title">Brew Stack</h3>
+                            <p data-i18n="game.stack.desc">Stack the crates to the stars!</p>
+                        </div>
+                        <div class="game-card glass-card" data-aos="zoom-in" data-aos-delay="250" data-game="race">
+                            <div class="game-icon">🏎️</div>
+                            <h3 data-i18n="game.race.title">Dragon Wing Race</h3>
+                            <p data-i18n="game.race.desc">High-speed arcade vector racing!</p>
+                        </div>
+                        <div class="game-card glass-card" data-aos="zoom-in" data-aos-delay="300" data-game="pong">
+                            <div class="game-icon">🎾</div>
+                            <h3 data-i18n="game.pong.title">Beer Pong Galaxy</h3>
+                            <p data-i18n="game.pong.desc">Master the neon cosmic bounce!</p>
+                        </div>
+                        <div class="game-card glass-card" data-aos="zoom-in" data-aos-delay="400" data-game="breath">
+                            <div class="game-icon">👾</div>
+                            <h3 data-i18n="game.breath.title">Dragon Breath</h3>
+                            <p data-i18n="game.breath.desc">Defend the brewery with cosmic fire!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- populated by shared.js -->
+    </footer>
+
+    <div id="ragdoll-container"></div>
+    <div class="skin-control-panel">
+        <input type="text" id="skin-username" placeholder="Minecraft Username" data-i18n="skin.placeholder" value="">
+        <button onclick="window.changeSkin(document.getElementById('skin-username').value)"
+            data-i18n="skin.btn.change">Change Skin</button>
+        <button onclick="window.resetRagdoll()" style="background: #e74c3c;" data-i18n="skin.btn.reset">Reset</button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../data/info_data.js"></script>
+    <script src="../core/lang.js"></script>
+    <script src="../core/shared.js"></script>
+    <script src="../core/script.js"></script>
+    <script src="../core/sounds.js?v=20"></script>
+</body>
+
+</html>

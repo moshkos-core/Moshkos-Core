@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Minecraft resource packs and epic builds by Moshko's Core!">
+    <title>Minecraft - Moshko's Core</title>
+    <link rel="stylesheet" href="../design/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="space-background">
+        <!-- populated by shared.js -->
+    </div>
+
+    <!-- Global Libraries (Safe for file:// usage) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+
+    <!-- App Logic -->
+    <script src="../ragdoll/ragdoll_physics.js"></script>
+    <script src="../ragdoll/ragdoll_background.js"></script>
+    <script src="../ragdoll/tnt.js"></script>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <!-- populated by shared.js -->
+    </nav>
+
+    <div id="content-root">
+        <main id="main-content">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="container">
+                    <h1 class="page-title" data-aos="fade-up" data-i18n="minecraft.title">Minecraft Specialty</h1>
+                    <p class="page-subtitle" data-aos="fade-up" data-i18n="minecraft.subtitle">Custom packs and epic builds from the Moshko's Core!</p>
+                </div>
+            </section>
+
+            <!-- Minecraft Content Section -->
+            <section class="section minecraft-section">
+                <div class="container">
+                    <div class="minecraft-content">
+                        <div class="minecraft-card glass-card" data-aos="fade-right" data-aos-delay="100">
+                            <div class="minecraft-header">
+                                <div class="minecraft-icon">📦</div>
+                                <h3 data-i18n="minecraft.card.pack.title">Resource Pack</h3>
+                            </div>
+                            <p data-i18n="minecraft.card.pack.desc">Explore my custom resource pack!</p>
+                            <div class="minecraft-features">
+                            </div>
+                            <a href="minecraft/resource-pack.html" class="btn btn-primary"
+                                style="margin-top: 1.5rem; width: 100%; display: flex; justify-content: center; align-items: center; text-align: center; box-sizing: border-box;" data-i18n="minecraft.card.pack.btn">View Resource Pack</a>
+                        </div>
+                        <div class="minecraft-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="minecraft-header">
+                                <div class="minecraft-icon">🏗️</div>
+                                <h3 data-i18n="minecraft.card.builds.title">My Builds</h3>
+                            </div>
+                            <p data-i18n="minecraft.card.builds.desc">Explore my showcase of incredible Minecraft builds!</p>
+                            <div class="minecraft-features">
+                            </div>
+                            <a href="minecraft/builds.html" class="btn btn-primary"
+                                style="margin-top: 1.5rem; width: 100%; display: flex; justify-content: center; align-items: center; text-align: center; box-sizing: border-box;" data-i18n="minecraft.card.builds.btn">View Gallery</a>
+                        </div>
+                        <div class="minecraft-card glass-card" data-aos="fade-left" data-aos-delay="300">
+                            <div class="minecraft-header">
+                                <div class="minecraft-icon">📅</div>
+                                <h3 data-i18n="minecraft.card.timeline.title">Parlamentum Timeline</h3>
+                            </div>
+                            <p data-i18n="minecraft.card.timeline.desc">My timeline in the Parlamentum staff!</p>
+                            <div class="minecraft-features">
+                            </div>
+                            <a href="minecraft/timeline.html" class="btn btn-primary"
+                                style="margin-top: 1.5rem; width: 100%; display: flex; justify-content: center; align-items: center; text-align: center; box-sizing: border-box;" data-i18n="minecraft.card.timeline.btn">View Timeline</a>
+                        </div>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div class="minecraft-features-section" data-aos="fade-up" data-aos-delay="400">
+                        <div class="glass-card" style="padding: 2rem; margin-top: 3rem;">
+                            <h3 style="color: var(--color-primary-light); margin-bottom: 1.5rem; text-align: center;" data-i18n="minecraft.features.heading">What Makes Our Pack Special?</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                                <div>
+                                    <h4 style="color: var(--color-primary-light); margin-bottom: 0.5rem;" data-i18n="minecraft.feat.doors.title">🚪 Enhanced Doors</h4>
+                                    <p style="color: var(--color-text-secondary); font-size: 0.9rem;" data-i18n="minecraft.feat.doors.desc">Custom 3D models for all doors and trapdoors, adding depth and detail to every wood type.</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--color-primary-light); margin-bottom: 0.5rem;" data-i18n="minecraft.feat.menus.title">🖥️ Clean Menus</h4>
+                                    <p style="color: var(--color-text-secondary); font-size: 0.9rem;" data-i18n="minecraft.feat.menus.desc">Updated textures for all containers and interfaces, making crafting and inventory management cleaner.</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--color-primary-light); margin-bottom: 0.5rem;" data-i18n="minecraft.feat.plants.title">🌿 Alive Vegetation</h4>
+                                    <p style="color: var(--color-text-secondary); font-size: 0.9rem;" data-i18n="minecraft.feat.plants.desc">Subtle, performance-friendly movement for plants using default internal shaders.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- populated by shared.js -->
+    </footer>
+
+    <div id="ragdoll-container"></div>
+    <div class="skin-control-panel">
+        <input type="text" id="skin-username" placeholder="Minecraft Username" data-i18n="skin.placeholder" value="">
+        <button onclick="window.changeSkin(document.getElementById('skin-username').value)" data-i18n="skin.btn.change">Change Skin</button>
+        <button onclick="window.resetRagdoll()" style="background: #e74c3c;" data-i18n="skin.btn.reset">Reset</button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../data/info_data.js"></script>
+    <script src="../core/lang.js"></script>
+    <script src="../core/shared.js"></script>
+    <script src="../core/script.js"></script>
+    <script src="../core/sounds.js?v=20"></script>
+</body>
+
+</html>
