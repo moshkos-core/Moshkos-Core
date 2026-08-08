@@ -4541,7 +4541,8 @@ body.ragdoll-disabled #ragdoll-container {
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    min-height: 110px;
+    min-height: 115px;
+    height: 115px;
     box-sizing: border-box;
 }
 
@@ -4551,9 +4552,14 @@ body.ragdoll-disabled #ragdoll-container {
     font-weight: 600;
     color: var(--color-primary-light);
     letter-spacing: 0.03em;
-    line-height: 1.45;
+    line-height: 1.4;
     text-align: center;
-    margin-bottom: 0.45rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .drink-alc {
@@ -4588,7 +4594,13 @@ body.ragdoll-disabled #ragdoll-container {
     }
 
     .drink-info {
-        min-height: 120px;
+        height: 125px;
+        min-height: 125px;
+    }
+
+    .drink-name {
+        height: 3.4rem;
+        font-size: 0.65rem;
     }
 
     .bar-drinks-grid {
