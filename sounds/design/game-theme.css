@@ -1,0 +1,138 @@
+/* =============================================
+   Moshko's Core Games - Shared Purple Space Theme
+   ============================================= */
+
+.game-wrapper {
+    background: linear-gradient(135deg, rgba(10, 6, 20, 0.98), rgba(20, 8, 40, 0.98));
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.12), 0 8px 32px rgba(0,0,0,0.6);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8B5CF6, #EC4899, #8B5CF6);
+    background-size: 200%;
+    animation: game-border-glow 4s ease-in-out infinite;
+}
+
+@keyframes game-border-glow {
+    0%, 100% { background-position: 0%; }
+    50% { background-position: 100%; }
+}
+
+.game-hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    background: rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 10px;
+}
+
+.game-hud-stat {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #a78bfa;
+}
+
+.game-hud-stat span {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+}
+
+.game-hud-hint {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(167, 139, 250, 0.5);
+    letter-spacing: 0.1em;
+}
+
+.game-title-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(236, 72, 153, 0.7);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.game-canvas-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.1), inset 0 0 20px rgba(0,0,0,0.4);
+}
+
+.game-canvas-wrap canvas {
+    display: block;
+    margin: auto;
+    background: #02010a;
+}
+
+.game-scanlines {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.06) 2px,
+        rgba(0,0,0,0.06) 4px
+    );
+    z-index: 5;
+}
+
+.game-controls {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.game-controls .btn {
+    min-width: 130px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] .game-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(124, 62, 237, 0.2);
+    box-shadow: 0 10px 40px rgba(124, 62, 237, 0.1);
+}
+
+[data-theme="light"] .game-hud {
+    background: rgba(124, 62, 237, 0.04);
+    border-color: rgba(124, 62, 237, 0.1);
+}
+
+[data-theme="light"] .game-hud-stat {
+    color: var(--color-primary);
+}
+
+[data-theme="light"] .game-hud-stat span {
+    color: var(--color-text-primary);
+    text-shadow: none;
+}
+
+[data-theme="light"] .game-canvas-wrap {
+    border-color: rgba(124, 62, 237, 0.15);
+}
+

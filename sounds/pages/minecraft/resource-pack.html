@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moshko's Custom Minecraft Resource Pack!">
+    <title>Resource Pack - MOSHKO'S</title>
+    <link rel="stylesheet" href="../../design/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .pack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pack-feature-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pack-img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: auto;
+            /* Push to bottom if needed */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .pack-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-secondary);
+        }
+
+        .feature-list li::before {
+            content: '\27A4';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            display: inline-block;
+        }
+
+        .download-zone {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background -->
+    <div class="space-background">
+        <!-- populated by shared.js -->
+    </div>
+
+    <!-- Global Libraries (Safe for file:// usage) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+
+    <!-- App Logic -->
+    <script src="../../ragdoll/ragdoll_physics.js"></script>
+    <script src="../../ragdoll/ragdoll_background.js"></script>
+    <script src="../../ragdoll/tnt.js"></script>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <!-- populated by navbar.js -->
+    </nav>
+
+    <div id="content-root">
+        <main id="main-content">
+            <!-- Header -->
+            <section class="page-header">
+                <div class="container">
+                    <h1 class="page-title" data-aos="fade-up" data-i18n="rp.title">Moshko's Resource Pack</h1>
+                    <p class="page-subtitle" data-aos="fade-up" data-i18n="rp.subtitle">Clean, Optimized, Vanilla-Friendly!</p>
+                    <div style="margin-top: 2rem; display: flex; justify-content: center;" data-aos="fade-up" data-aos-delay="100">
+                        <a href="../minecraft.html" class="btn btn-primary" data-i18n="rp.back">Back to Minecraft Page</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content -->
+            <section class="section">
+                <div class="container">
+                    <div class="glass-card" style="margin-bottom: 2rem;">
+                        <h2 class="section-title" style="margin-bottom: 1rem; font-size: 2rem;" data-i18n="rp.overview.title">Overview</h2>
+                        <p style="color: var(--color-text-secondary); line-height: 1.6;" data-i18n="rp.overview.desc">A clean, lightweight resource pack that refreshes GUI menus, enhances block models (especially doors and trapdoors), and adds subtle vegetation animations using internal shaders—all while keeping the vanilla Minecraft feel.</p>
+                        <div style="margin-top: 1rem; display:flex; gap: 1rem; flex-wrap: wrap;">
+                            <span class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Version: 1.20-1.21.9</span>
+                            <span class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Resolution: 16x (Vanilla)</span>
+                        </div>
+                    </div>
+
+                    <div class="pack-grid">
+                        <!-- Feature 1: Doors -->
+                        <div class="glass-card pack-feature-card" data-aos="fade-up">
+                            <h3 style="color: var(--color-primary-light);" data-i18n="rp.feat.doors.title">🚪 Enhanced Doors</h3>
+                            <p style="color: var(--color-text-secondary);" data-i18n="rp.feat.doors.desc">Doors and trapdoors have been redesigned with custom 3D models and depth for all wood types.</p>
+                            <img src="https://imgur.com/KaphcoZ.png" alt="Doors" class="pack-img">
+                        </div>
+
+                        <!-- Feature 2: Menus -->
+                        <div class="glass-card pack-feature-card" data-aos="fade-up" data-aos-delay="100">
+                            <h3 style="color: var(--color-primary-light);" data-i18n="rp.feat.menus.title">🖥️ Clean Interface</h3>
+                            <p style="color: var(--color-text-secondary);" data-i18n="rp.feat.menus.desc">Menu refresh—updated textures for Crafting Tables, Furnaces, Anvils, and more.</p>
+                            <img src="https://imgur.com/vywt971.png" alt="Menus" class="pack-img">
+                        </div>
+
+                        <!-- Feature 3: Nature & Fixes -->
+                        <div class="glass-card pack-feature-card" data-aos="fade-up" data-aos-delay="200">
+                            <h3 style="color: var(--color-primary-light);" data-i18n="rp.feat.nature.title">🌿 Nature &amp; Fixes</h3>
+                            <ul class="feature-list">
+                                <li data-i18n="rp.feat.nature.li1">Subtle plant movement (Internal Shaders)</li>
+                                <li data-i18n="rp.feat.nature.li2">Model fixes for Mushrooms, Vines, and End Rods</li>
+                                <li data-i18n="rp.feat.nature.li3">Redesigned Sun &amp; Moon</li>
+                                <li data-i18n="rp.feat.nature.li4">Secret sound for Totem usage</li>
+                            </ul>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top: auto;">
+                                <img src="https://imgur.com/LiNIHx2.png" alt="Sun" class="pack-img"
+                                    style="border-radius: 8px; height: 150px; object-fit: cover;">
+                                <img src="https://imgur.com/By2wXBn.png" alt="Moon" class="pack-img"
+                                    style="border-radius: 8px; height: 150px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- Feature 4: Secret -->
+                        <div class="glass-card pack-feature-card" data-aos="fade-up" data-aos-delay="300"
+                            style="justify-content:center; align-items:center; text-align:center;">
+                            <span style="font-size: 3rem;">🤫</span>
+                            <h3 style="color: var(--color-primary-light);" data-i18n="rp.feat.secret.title">Secret Feature</h3>
+                            <p data-i18n="rp.feat.secret.desc">Try placing an End Rod on your head and see what happens...</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card download-zone" data-aos="fade-up">
+                        <h2 style="color: var(--color-primary-light); margin-bottom: 1.5rem;" data-i18n="rp.download.title">Download Resource Pack</h2>
+                        <a href="https://www.dropbox.com/scl/fi/p9r0h26l3ncdmevzrb8dl/4-lMoshko-Texture.zip?rlkey=1otgsow4w2coxijuje5t1rw3w&st=7y8ar9z2&dl=1"
+                            class="btn btn-primary btn-lg" target="_blank"
+                            style="padding: 1rem 3rem; font-size: 1.2rem;" data-i18n="rp.download.btn">
+                            ⬇️ Click Here ⬇️
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- populated by shared.js -->
+    </footer>
+
+    <div id="ragdoll-container"></div>
+    <div class="skin-control-panel">
+        <input type="text" id="skin-username" placeholder="Minecraft Username" data-i18n="skin.placeholder" value="">
+        <button onclick="changeSkin(document.getElementById('skin-username').value)" data-i18n="skin.btn.change">Change Skin</button>
+        <button onclick="resetRagdoll()" style="background: #e74c3c;" data-i18n="skin.btn.reset">Reset</button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../../data/info_data.js"></script>
+    <script src="../../core/lang.js"></script>
+    <script src="../../core/shared.js"></script>
+    <script src="../../core/script.js"></script>
+    <script src="../../core/sounds.js?v=20"></script>
+</body>
+
+</html>
